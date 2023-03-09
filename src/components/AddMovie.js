@@ -2,12 +2,12 @@ import  { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-
+import {useNavigate} from "react-router-dom"
 export default function AddMovie({AddHandler}) { 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+const navigate =useNavigate()
 //*state to get the input from the user*//
 //*pour stocker  les var eli yda5alhom user
 const[Title,setTitle] = useState("")
@@ -19,6 +19,7 @@ const addMovie=()=>{
   const newMovie={id:Math.random ,Title,Description,Rate,PosterURL}
   AddHandler(newMovie);
   handleClose();
+   navigate('/')
 }
   return (
     <div>
