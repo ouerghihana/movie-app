@@ -3,6 +3,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Rate from './Rate';
+import {Link} from 'react-router-dom'
 export default function MovieCard({movie}) { 
   console.log(movie);
 
@@ -17,6 +18,7 @@ export default function MovieCard({movie}) {
         {movie.Description}
         </Card.Text>
         <Rate rate={movie.Rate }/>
+        <Button variant="primary"><Link to={`/movieTrailer/${movie.id}`}> Trailer   </Link></Button>
         <Button variant="primary">Play</Button>
       </Card.Body>
     </Card>
